@@ -1,0 +1,42 @@
+<html>
+
+<body>
+
+<button id="aqui" class="cambiante">Si clicas cambio de color a CHANGE!</button>
+<p class="cambiante2">Soy CHANGE</p>
+
+<button type="button" class="cambio"> <img src="https://pasionporelcine.net/wp-content/uploads/2013/02/Gizmo-gremlin-bueno-cr%C3%ADtica-pel%C3%ADcula.jpg" width="100px" height="100px" id="gizmo" class="interaccion" /></button>
+<!-- <img src="https://pasionporelcine.net/wp-content/uploads/2013/02/Gizmo-gremlin-bueno-cr%C3%ADtica-pel%C3%ADcula.jpg" width="100px" height="100px" id="gizmo" class="interaccion"> -->
+
+<script>
+document.body.onload = function() {
+  alert('Ya se ha refrescado la pagina');
+}
+
+//BOTON																							
+ const hanFetClick = document.getElementById("aqui"); //  Encuentra el elemento de hanFetClick con id "aqui"
+
+  hanFetClick.onclick = miAlerta; // Agrega la función hanFetClick al elemento
+
+  function miAlerta(evento) {    
+  let cambiar = document.querySelector('.cambiante2');
+    cambiar.style.color = 'red';
+  
+  }
+  
+  // Selección de la imagen
+const gizmo = document.querySelector('#gizmo');
+
+// Evento de clic para la imagen
+gizmo.addEventListener('click', function() {
+  // Cambiar el tamaño de la imagen
+  gizmo.style.width = '150px';
+  gizmo.style.height = '150px';
+});
+     
+</script>
+
+</body>
+</html>
+
+
