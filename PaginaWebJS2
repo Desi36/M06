@@ -1,0 +1,92 @@
+<html>
+
+<body>
+
+<button id="aqui" class="cambiante">Si clicas cambio de color a CHANGE!</button>
+<p class="cambiante2">Soy CHANGE</p>
+
+<button type="button" class="cambio"> <img src="https://pasionporelcine.net/wp-content/uploads/2013/02/Gizmo-gremlin-bueno-cr%C3%ADtica-pel%C3%ADcula.jpg" width="100px" height="100px" id="gizmo" class="interaccion" /></button>
+<!-- <img src="https://pasionporelcine.net/wp-content/uploads/2013/02/Gizmo-gremlin-bueno-cr%C3%ADtica-pel%C3%ADcula.jpg" width="100px" height="100px" id="gizmo" class="interaccion"> -->
+<h3> Tareas</h3>
+<ol id="lista">
+  <li>
+    <p>
+      Aprobar M06
+    </p>
+  </li>
+  <li>
+    <p>
+      Aprobar M07
+    </p>
+  </li>
+  <li>
+    <p>
+      Aprobar M08
+    </p>
+  </li>
+  <li>
+    <p>
+      Aprobar M09
+    </p>
+  </li>
+  <li>
+    <p>
+      Aprobar M12
+    </p>
+  </li>
+</ol>
+
+<input type="text" name="tarea" placeholder="Escribe una tarea...">
+<button id="button">
+  Añadir tarea
+</button>
+</body>
+
+<script>
+// Selección del botón y la imagen
+const boton = document.querySelector('#aqui');
+const gizmo = document.querySelector('#gizmo');
+
+// Función para cambiar el tamaño de la imagen
+function cambiarTamañoImagen() {
+  gizmo.style.width = '150px';
+  gizmo.style.height = '150px';
+}
+
+// Evento de clic para el botón
+boton.addEventListener('click', function hanFetClick() {
+  // Cambiar el color del texto del botón
+  const cambiar = document.querySelector('.cambiante2');
+  cambiar.style.color = 'red';
+
+});
+
+// Evento de clic para la imagen
+gizmo.addEventListener('click', function hanFetClick() {
+  // Llamar a la función para cambiar el tamaño de la imagen
+  cambiarTamañoImagen();
+});
+
+
+//Añadir a la lista 
+
+const lista = document.getElementById("lista");
+const btn = document.getElementById("button");
+
+btn.addEventListener("click", () => {
+  const tareaInput = document.querySelector('input[name="tarea"]');
+  const tarea = tareaInput.value;
+
+  const nuevaTarea = document.createElement("li");
+  const textoTarea = document.createTextNode(tarea);
+  nuevaTarea.appendChild(textoTarea);
+  lista.appendChild(nuevaTarea);
+
+  tareaInput.value = "";
+});
+     
+</script>
+
+
+
+</html>
